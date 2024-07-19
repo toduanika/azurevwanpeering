@@ -25,7 +25,6 @@ $virtualHubs = Get-AzVirtualHub -ResourceGroupName $resourceGroup.ResourceGroupN
 
 if ($virtualHubs -ne 0) {
 
-    # create peering for each virtual hub, based on environment and location
     foreach ($virtualHub in $virtualHubs) {
 
         $subscriptions = Get-AzSubscription
