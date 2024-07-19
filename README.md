@@ -1,7 +1,9 @@
 # Azure Virtual WAN - Automate peering from Virtual Hubs to Virtual Networks
 
-Networking is one of the most critical aspects of Azure: without it, different components and workloads cannot interconnect. Azure offers several ways to plan your network infrastructure. This planning involves deciding on the geographical location of different components/workloads, which in networking terms is referred to as topology.
+Networking is super important in Azure because it allows different parts of your system to talk to each other. Azure gives you several ways to plan your network infrastructure, including where to place your components and workloads, which is known as topology.
 
-Azure provides a resource called Azure Virtual WAN for a managed hub/spoke topology. In this setup, the main connectivity point or virtual hub within each region is managed by Azure (although technically, it remains a virtual network). This regional virtual hub is used to connect the virtual networks of different projects or workloads within the corresponding virtual hub using peering connections. While Azure does make global VNet peering possible, ideally, networks in the same region should connect with each other.
+One handy resource Azure offers is the Azure Virtual WAN. This helps you set up a managed hub-and-spoke network. In this setup, Azure takes care of the main connection point, called the virtual hub, in each region. This hub connects different virtual networks for various projects or workloads within that region using peering connections. While you can connect networks globally with Azure's VNet peering, it's best to connect networks within the same region whenever possible.
 
 ![Virtual Hub to Virtual Network](/media/vhub-regional-peering.drawio.png)
+
+This script is designed to make your life easier when managing virtual networks in Azure. It automatically finds all the virtual hubs in your existing Virtual WAN (vWAN) resource and retrieves all the virtual networks. Then, it compares their locations. If the locations match, it sets up peering connections between them. This way, you don't have to create peering connections one by one for a large number of virtual networks.
