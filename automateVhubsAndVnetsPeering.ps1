@@ -1,17 +1,17 @@
 <#
     .SYNOPSIS
-    This script creates peering connection from virtual hubs to virtual networks based on location.
+    Creates peering connections from virtual hubs to virtual networks based on their locations.
 
     .DESCRIPTION
-    This script collects virtual hubs and virtual networks existing in each subscription, then checks their locations and creates the corresponding peering connections.
+    This script retrieves virtual hubs and virtual networks from each subscription, checks their locations, and establishes the corresponding peering connections.
 
     .PARAMETER resourceGroupName
-    Specifies the existing resource group name whete virtual wan has been deployed. This parameter is mandatory and should not be empty
+    Specifies the name of the existing resource group where the Virtual WAN is deployed. This parameter is mandatory and must not be empty.
 
     .NOTES
-        Author          : Nika Todua.
-
+    Author: Nika Todua
 #>
+
 
 [CmdLetBinding()]
 param (
